@@ -1,9 +1,7 @@
 export class WordCount extends HTMLParagraphElement {
   constructor() {
-    // Always call super first in constructor
     super();
 
-    // count words in element's parent element
     const wcParent = this.parentNode;
 
     function countWords(node){
@@ -13,17 +11,13 @@ export class WordCount extends HTMLParagraphElement {
 
     const count = `Words: ${countWords(wcParent)}`;
 
-    // Create a shadow root
     const shadow = this.attachShadow({mode: 'open'});
 
-    // Create text node and add word count to it
     const text = document.createElement('span');
     text.textContent = count;
 
-    // Append it to the shadow root
     shadow.appendChild(text);
 
-    // Update count when element content changes
     setInterval(function() {
       const count = `Words: ${countWords(wcParent)}`;
       text.textContent = count;
@@ -32,5 +26,13 @@ export class WordCount extends HTMLParagraphElement {
 
   static register() {
     customElements.define('word-count', WordCount, { extends: 'p' })
+  }
+
+  static mount() {
+    const root = document.querySelector('#word-count-root')
+    /** @type {HTMLTemplateElement} */
+    const template = document.querySelector('#word-count-template')
+    const shadowRoot = root.attachShadow({ mode: 'open' })
+    shadowRoot.appendChild(template.content.cloneNode(true))
   }
 }

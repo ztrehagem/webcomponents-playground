@@ -7,7 +7,7 @@ const staticServer = serveStatic('public')
 
 const server = http.createServer((req, res) => {
   console.log(`[${new Date().toLocaleTimeString()}] ${req.url}`)
-  staticServer(req, res)
+  staticServer(req, res, () => {})
 })
 
 server.listen(port, () => {

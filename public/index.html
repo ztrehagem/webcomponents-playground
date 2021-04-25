@@ -8,9 +8,9 @@
   <script src="/main.js" type="module" defer></script>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="word-count-root"></div>
 
-  <template id="app-template">
+  <template id="word-count-template">
     <div class="word-count">
       <p contenteditable="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus perspiciatis tempora aliquid facere delectus nesciunt debitis accusamus, nemo provident est molestias eveniet nihil exercitationem dolores quod cum et in quis.</p>
       <p is="word-count"></p>
@@ -25,5 +25,14 @@
     anonymous custom elements は HTMLElement しか extends できない。
    -->
   <foo-component></foo-component>
+
+  <!--
+    .html ファイルを fetch -> DOMParser でパースして shadowRoot.appendChild
+   -->
+  <bar-component></bar-component>
+
+  <bar-component text-color="red">
+    <span slot="name">John Doe</span>
+  </bar-component>
 </body>
 </html>
