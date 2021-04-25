@@ -12,12 +12,15 @@
 
   <template id="app-template">
     <div class="word-count">
-      <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus perspiciatis tempora aliquid facere delectus nesciunt debitis accusamus, nemo provident est molestias eveniet nihil exercitationem dolores quod cum et in quis.</div>
+      <div contenteditable="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus perspiciatis tempora aliquid facere delectus nesciunt debitis accusamus, nemo provident est molestias eveniet nihil exercitationem dolores quod cum et in quis.</div>
       <p is="word-count"></p>
       <!--
-        <template> や ShadowDOM の中だろうと、 `is` 属性を使わなければマウントされない。
+        `customElements.define()` 時に extends する要素名を指定した場合は、
+        `is` 属性によるカスタムコンポーネント指定しか受け付けない。
       -->
     </div>
   </template>
+
+  <foo-component></foo-component>
 </body>
 </html>

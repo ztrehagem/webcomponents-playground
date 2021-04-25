@@ -1,6 +1,8 @@
+import { FooComponent } from "./components/FooComponent.js";
 import { WordCount } from "./components/WordCount.js";
 
 WordCount.register()
+FooComponent.register()
 
 const appEl = document.querySelector('#app')
 /** @type {HTMLTemplateElement} */
