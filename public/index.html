@@ -12,7 +12,7 @@
 
   <template id="app-template">
     <div class="word-count">
-      <div contenteditable="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus perspiciatis tempora aliquid facere delectus nesciunt debitis accusamus, nemo provident est molestias eveniet nihil exercitationem dolores quod cum et in quis.</div>
+      <p contenteditable="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus perspiciatis tempora aliquid facere delectus nesciunt debitis accusamus, nemo provident est molestias eveniet nihil exercitationem dolores quod cum et in quis.</p>
       <p is="word-count"></p>
       <!--
         `customElements.define()` 時に extends する要素名を指定した場合は、
@@ -21,6 +21,9 @@
     </div>
   </template>
 
+  <!--
+    anonymous custom elements は HTMLElement しか extends できない。
+   -->
   <foo-component></foo-component>
 </body>
 </html>

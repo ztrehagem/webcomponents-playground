@@ -5,8 +5,8 @@ export class FooComponent extends HTMLElement {
     const paragraph = document.createElement('p')
     paragraph.textContent = 'FooComponent'
 
-    const shadowRoot = this.attachShadow({ mode: 'open' })
-    shadowRoot.appendChild(paragraph)
+    this.attachShadow({ mode: 'open' })
+    this.shadowRoot.appendChild(paragraph)
   }
 
   static register() {
